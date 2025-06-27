@@ -1,0 +1,95 @@
+<?php
+    $centreCode = isset($_GET['centre']) ? $_GET['centre'] : '';
+?>
+
+<!DOCTYPE HTML>
+	<html>
+		<head>
+			<title>petsoft.com</title>
+			<style>
+			body {
+				font-family: Arial, sans-serif;
+				background-color: #f2f2f2;
+				margin: 0;
+				padding: 0;
+				background-image: url('https://media.istockphoto.com/id/1417882544/photo/large-group-of-cats-and-dogs-looking-at-the-camera-on-blue-background.jpg?s=612x612&w=0&k=20&c=kGKANSIFdNfhBJMipyuaKU4BcVE1oELWev9lF2ickE0=');
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+
+			/* Form Styles */
+			form {
+				width: 300px;
+				margin: 50px auto;
+				background-color: rgba(255,255,255,0.3);
+				padding: 20px;
+				border-radius: 5px;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			}
+
+			/* Button Styles */
+			input[type="button"] {
+				padding: 10px 20px;
+				font-size: 16px;
+				background-color: #4CAF50;
+				color: white;
+				border: none;
+				cursor: pointer;
+				margin-bottom: 10px;
+				width: 150px;
+				border-radius: 5px;
+			
+			}
+
+			input[type="button"]:hover {
+				background-color: #45a049;
+			}
+
+			/* Title Styles */
+			h2 {
+				text-align: center;
+				color: #333;
+				text-decoration: underline;
+				padding-bottom: 10px;
+			}
+
+			label {
+				display: block;
+				margin-bottom: 10px;
+				font-weight: bold;
+			}
+
+		</style>
+		</head>
+		
+		<body>
+			<form>
+				<center>
+					<h2>Pet Management</h2>
+					<label>Add a pet:</label>
+					<input type="button" value="Add" onclick="addpet()"></input>
+					<label>Delete a pet:</label>
+					<input type="button" value="Delete" onclick="deletepet()"></input>
+					<label>Modify pet details:</label>
+					<input type="button" value="Modify" onclick="modify()"></input>
+				</center>
+			</form>
+		</body>
+
+
+	<script>
+		var centre_code = '<?php echo $centreCode; ?>';
+  		function addpet() {
+    			window.location.href = "addpet.php?centre="+centre_code;
+  		}
+
+   		function deletepet(){
+       			window.location.href="deletepet.php?centre="+centre_code;
+    		}
+	
+	   	function modify(){
+			window.location.href="modifypet.php?centre="+centre_code;
+		}
+	</script>
+</html>
+				
